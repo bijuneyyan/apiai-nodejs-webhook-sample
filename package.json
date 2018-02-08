@@ -18,7 +18,9 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "actions-on-google": "^1.1.0"
+
   },
   "engines": {
     "node": "8.1.4"
