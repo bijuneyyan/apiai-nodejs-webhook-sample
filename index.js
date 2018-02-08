@@ -1,3 +1,13 @@
+
+//biju
+
+'use strict';
+
+process.env.DEBUG = 'actions-on-google:*';
+const ApiAiApp = require('actions-on-google').ApiAiApp;
+
+// /biju
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
@@ -10,8 +20,7 @@ const AUTH_TOKEN = 'an-example-token'
 // Biju
 
 const REMINDER_ACTION = 'reminder_action';
-const REMINDER_ARGUMENT = 'reminderText';
-const ECHON_ARGUMENT = 'echoNumber';
+const appy = new ApiAiApp({request, response});
 
 // /Biju
 
@@ -57,7 +66,7 @@ app.post('/webhook', function (req, res) {
 // biju
     function reminderAction (app) { 
 
-      app.tell('Alright, your silly name');
+      appy.tell('Alright, your silly name');
 }
 
 // /biju
