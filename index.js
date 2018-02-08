@@ -7,6 +7,14 @@ app.set('port', (process.env.PORT || 5000))
 const REQUIRE_AUTH = true
 const AUTH_TOKEN = 'an-example-token'
 
+// Biju
+
+const REMINDER_ACTION = 'reminder_action';
+const REMINDER_ARGUMENT = 'reminderText';
+const ECHON_ARGUMENT = 'echoNumber';
+
+// /Biju
+
 app.get('/', function (req, res) {
   res.send('Use the /webhook endpoint.')
 })
@@ -45,6 +53,22 @@ app.post('/webhook', function (req, res) {
     displayText: webhookReply
   })
 })
+
+// biju
+    function reminderAction (app) { 
+
+      app.tell('Alright, your silly name');
+}
+
+// /biju
+
+// Biju
+
+let actionMap = new Map();
+actionMap.set(REMINDER_ACTION, reminderAction);
+
+  // /Biju
+
 
 app.listen(app.get('port'), function () {
   console.log('* Webhook service is listening on port:' + app.get('port'))
